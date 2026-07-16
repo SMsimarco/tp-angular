@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Disco</th>
+            <th>Banda</th>
+            <th>Año</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let disc of discos" [ngClass]="{'clearance': disc.clearance}">
+            <td>{{disc.name}}</td>
+            <td>{{disc.band}}</td>
+            <td>{{disc.year}}</td>
+            <td>{{disc.price | currency}}</td>
+            <td><span class="badge bg-warning text-dark" *ngIf="disc.stock == 0">SIN STOCK</span></td>
+            <td><img [src]="disc.img" [alt]="disc.name"></td>
+        </tr>
+    </tbody>
+</table>
