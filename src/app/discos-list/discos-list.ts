@@ -16,8 +16,9 @@ export class DiscosList {
     year: 1997,
     stock: 1,
     price: 300000,
-    img: "assets/img/charly.jpeg",
+    img: "altasuciedad.jpeg",
     clearance: true,
+    quantify: 0
   },
   {
     name: "Parte de la Religión",
@@ -25,8 +26,9 @@ export class DiscosList {
     year: 1987,
     stock: 1,
     price: 450000,
-    img: "assets/img/charly.jpeg",
+    img: 'charly.jpeg',
     clearance: false,
+    quantify: 0
   },
   {
     name: "Help!",
@@ -34,8 +36,9 @@ export class DiscosList {
     year: 1965,
     stock: 0,
     price: 500000,
-    img: "assets/img/charly.jpeg",
+    img: "help!.jpeg",
     clearance: false,
+    quantify: 0
   },
   {
     name: "Tattoo You",
@@ -43,8 +46,20 @@ export class DiscosList {
     year: 1981,
     stock: 0,
     price: 650000,
-    img: "assets/img/charly.jpeg",
+    img: "tattooyou.jpeg",
     clearance: true,
+    quantify: 0
   }
 ];
+
+  upQuantity(discos: disc): void {
+    if(discos.stock)
+    discos.quantify++;
+  }
+
+  downQuantity(discos: disc): void {
+    if(discos.quantify > 0)
+    discos.quantify--;
+  }
+  
 }

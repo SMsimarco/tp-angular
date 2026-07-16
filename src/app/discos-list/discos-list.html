@@ -7,6 +7,7 @@
             <th>Precio</th>
             <th>Stock</th>
             <th>Imagen</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -16,7 +17,15 @@
             <td>{{disc.year}}</td>
             <td>{{disc.price | currency}}</td>
             <td><span class="badge bg-warning text-dark" *ngIf="disc.stock == 0">SIN STOCK</span></td>
-            <td><img [src]="disc.img" [alt]="disc.name"></td>
+            <td>
+                <img width="90px" class="img-thumbnail" 
+                [src]="disc.img" [alt]="disc.name">
+            </td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="downQuantity(disc)">-</button>
+                {{disc.quantify}}
+                <button class="btn btn-primary btn-sm" (click)="upQuantity(disc)">+</button>
+            </td>
         </tr>
     </tbody>
 </table>

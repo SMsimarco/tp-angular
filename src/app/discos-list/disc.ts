@@ -6,4 +6,5 @@ export interface disc{
     price: number;
     img: string;
     clearance: boolean;
+    quantify: number;
 }
