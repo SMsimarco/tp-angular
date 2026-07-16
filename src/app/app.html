@@ -10,21 +10,16 @@
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Discos</a>
+          <a class="nav-link" [routerLink]="['/discos']">Discos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Mas Vendidos</a>
+          <a class="nav-link" [routerLink]="['/about']">About</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <div class="container">
-  <div class="row">
-    <div class="col-8"> 
-      <app-discos-list></app-discos-list>
-    </div>
-    <div class="col-4">Agregar al Carrito</div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
-<footer>{{title}} 2026</footer>
+<footer>{{title}} 2026 ©</footer>

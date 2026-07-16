@@ -16,7 +16,7 @@ export class DiscosList {
       year: 1997,
       stock: 2,
       price: 300000,
-      img: "altasuciedad.jpeg",
+      img: "/assets/img/altasuciedad.jpeg",
       clearance: false,
       quantity: 0
     },
@@ -26,7 +26,7 @@ export class DiscosList {
       year: 1987,
       stock: 3,
       price: 450000,
-      img: 'charly.jpeg',
+      img: '/assets/img/charly.jpeg',
       clearance: false,
       quantity: 0
     },
@@ -36,7 +36,7 @@ export class DiscosList {
       year: 1965,
       stock: 0,
       price: 500000,
-      img: "help!.jpeg",
+      img: "/assets/img/help!.jpeg",
       clearance: true,
       quantity: 0
     },
@@ -46,7 +46,7 @@ export class DiscosList {
       year: 1981,
       stock: 0,
       price: 650000,
-      img: "tattooyou.jpeg",
+      img: "/assets/img/tattooyou.jpeg",
       clearance: true,
       quantity: 0
     }
@@ -62,7 +62,7 @@ export class DiscosList {
       discos.quantity--;
   }
 
-  ChangeQuantity(event: KeyboardEvent, discos: disc): void {
+  ChangeQuantity(event: KeyboardEvent, discos: disc): void { //especifique keyBoardEvent porque me tiraba error
     console.log(event.key);
   }
 
