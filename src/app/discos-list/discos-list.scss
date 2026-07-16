@@ -1,8 +1,56 @@
-h1 {
-    color: blue;
+.clearance {
+    border-left: 4px solid #e74c3c;
+    background: #fff5f5;
+    color: #c0392b;
 }
 
-.clearance {
-    border: 2px solid rgb(0, 0, 0);
-    background: rgb(196, 93, 93);
+td {
+    vertical-align: middle;
+}
+
+input {
+    max-width: 40px;
+}
+
+table {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #1a1a2e;
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #f0f4ff;
+    transition: background 0.2s ease;
+}
+
+.btn-sm {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    line-height: 1;
+    background-color: #2e2e51;
+    color: white;
+}
+
+img.img-thumbnail {
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.input-group {
+    max-width: 110px;
+    margin: 0 auto;
+
+    input {
+        height: 28px;
+    }
 }
