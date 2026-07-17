@@ -20,5 +20,3 @@ Tienda de discos de vinilo. Permite ver un catálogo de discos con su stock y pr
 ## API externa (MockAPI)
 El catálogo de discos se obtiene con una petición **GET** a:
 `https://6a5a9908ad8332e75f02993a.mockapi.io/discos`
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
