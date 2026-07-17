@@ -8,10 +8,6 @@ td {
     vertical-align: middle;
 }
 
-input {
-    max-width: 40px;
-}
-
 table {
     border-radius: 12px;
     overflow: hidden;
@@ -28,15 +24,6 @@ tbody tr:hover {
     transition: background 0.2s ease;
 }
 
-.btn-sm {
-    width: 28px;
-    height: 28px;
-    padding: 0;
-    line-height: 1;
-    background-color: #2e2e51;
-    color: white;
-}
-
 img.img-thumbnail {
     border-radius: 8px;
     transition: transform 0.2s ease;
@@ -46,11 +33,3 @@ img.img-thumbnail {
     }
 }
 
-.input-group {
-    max-width: 110px;
-    margin: 0 auto;
-
-    input {
-        height: 28px;
-    }
-}

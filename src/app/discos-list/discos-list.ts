@@ -50,20 +50,6 @@ export class DiscosList {
       clearance: true,
       quantity: 0
     }
+    
   ];
-
-  upQuantity(discos: disc): void {
-    if (discos.quantity < discos.stock)
-      discos.quantity++;
-  }
-
-  downQuantity(discos: disc): void {
-    if (discos.quantity > 0)
-      discos.quantity--;
-  }
-
-  ChangeQuantity(event: KeyboardEvent, discos: disc): void { //especifique keyBoardEvent porque me tiraba error
-    console.log(event.key);
-  }
-
 }

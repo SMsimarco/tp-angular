@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { DiscsAbout } from './discs-about/discs-about';
 import { ShopDiscs } from './shop-discs/shop-discs';
 import { Cart } from './cart/cart';
+import { InputNumber } from './input-number/input-number';
 
 @NgModule({
-  declarations: [App, DiscosList, DiscsAbout, ShopDiscs, Cart],
+  declarations: [App, DiscosList, DiscsAbout, ShopDiscs, Cart, InputNumber],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideClientHydration(withEventReplay())],
   bootstrap: [App],

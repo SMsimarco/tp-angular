@@ -24,12 +24,7 @@
                 <img width="90px" class="img-thumbnail" [src]="disc.img" [alt]="disc.name">
             </td>
             <td>
-                <div class="input-group input-group-sm justify-content-center">
-                    <button class="btn btn-sm" (click)="downQuantity(disc)">-</button>
-                    <input type="text" class="form-control text-center" [(ngModel)]="disc.quantity"
-                        (keyup)="ChangeQuantity($event, disc)">
-                    <button class="btn btn-sm" (click)="upQuantity(disc)">+</button>
-                </div>
+                <app-input-number [quantity]="disc.quantity" [max]="disc.stock" *ngIf="disc.stock"></app-input-number>
             </td>
         </tr>
     </tbody>
