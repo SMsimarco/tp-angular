@@ -1,1 +1,4 @@
 <h3>Agregar al Carrito</h3>
+<div *ngFor="let disco of cart.cartList">
+  {{ disco.name }} - {{ disco.band }} x{{ disco.quantity }}
+</div>

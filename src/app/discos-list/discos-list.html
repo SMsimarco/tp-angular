@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let disc of discos" [ngClass]="{'clearance': disc.clearance}">
+        <tr *ngFor="let disc of cart.discos$ | async" [ngClass]="{'clearance': disc.clearance}">
             <td>{{disc.name}}</td>
             <td>{{disc.band}}</td>
             <td>{{disc.year}}</td>
@@ -24,7 +24,10 @@
                 <img width="90px" class="img-thumbnail" [src]="disc.img" [alt]="disc.name">
             </td>
             <td>
-                <app-input-number [quantity]="disc.quantity" [max]="disc.stock" *ngIf="disc.stock"></app-input-number>
+                <div class="d-flex flex-column align-items-center gap-2">
+                    <app-input-number [quantity]="disc.quantity" [max]="disc.stock" (quantityChange)="disc.quantity = $event" *ngIf="disc.stock"></app-input-number>
+                    <button class="btn btn-primary btn-sm rounded-pill px-3 buy-btn" (click)="addToCart(disc)" *ngIf="disc.stock">Comprar</button>
+                </div>
             </td>
         </tr>
     </tbody>

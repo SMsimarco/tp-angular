@@ -27,9 +27,19 @@ tbody tr:hover {
 img.img-thumbnail {
     border-radius: 8px;
     transition: transform 0.2s ease;
-
-    &:hover {
-        transform: scale(1.1);
-    }
 }
 
+img.img-thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.buy-btn {
+    font-weight: 600;
+    transition: transform 0.15s ease;
+    background-color: #1a1a2e;
+    border-color: #1a1a2e;
+}
+
+.buy-btn:hover {
+    transform: scale(1.05);
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { disc } from './disc';
+import { DiscCart } from '../disc-cart';
 
 @Component({
   selector: 'app-discos-list',
@@ -50,6 +51,11 @@ export class DiscosList {
       clearance: true,
       quantity: 0
     }
-    
   ];
+
+  constructor(public cart: DiscCart) {}
+
+  addToCart(disc: disc): void {
+    this.cart.addToCart(disc);
+  }
 }
