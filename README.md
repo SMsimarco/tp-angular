@@ -1,59 +1,27 @@
-# TpAngular
+Trabajo Práctico Seminario Angular 2026.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.18.
+## Datos del estudiante
+- **Nombre y Apellido:** Simon Guillermo Marconi
+- **DNI:** 46344129
+- **Email:** ssimonmarconi@gmail.com
+- **Sede:** Tandil
+- **Carrera:** TUDAI
 
-## Development server
+## Temática
+Tienda de discos de vinilo. Permite ver un catálogo de discos con su stock y precio, elegir cantidad y agregarlos a un carrito de compras.                       El catálogo se obtiene desde una API externa (MockAPI).
 
-To start a local development server, run:
+## Funcionalidades
+- **Ruteo:** dos secciones — `/discos` (catálogo + carrito) y `/about` (info del proyecto).
+- **Componentes:** `DiscosList` y `Cart` conviven en la página `ShopDiscs`, comunicados mediante un servicio compartido.
+- **Interfaces:** `disc` tipa todos los discos del catálogo y del carrito.
+- **Control de flujo:** `*ngFor`/`*ngIf` en la tabla de discos, el carrito y el selector de cantidad.
+- **Comunicación entre componentes:** servicio `DiscCart` (estado compartido con `BehaviorSubject`) + `@Input`/`@Output` en el componente `InputNumber`.
+- **Carrito con control de stock:** al comprar, se descuenta el stock disponible y no se puede comprar más de lo que hay.
 
-```bash
-ng serve
-```
+## API externa (MockAPI)
+El catálogo de discos se obtiene con una petición **GET** a:
+`https://6a5a9908ad8332e75f02993a.mockapi.io/discos`
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Link Stackblitz
+`https://stackblitz.com/~/github.com/SMsimarco/tp-angular`
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
