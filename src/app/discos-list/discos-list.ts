@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { disc } from './disc';
 import { DiscCart } from '../disc-cart';
 
@@ -8,7 +8,7 @@ import { DiscCart } from '../disc-cart';
   templateUrl: './discos-list.html',
   styleUrl: './discos-list.scss',
 })
-export class DiscosList {
+export class DiscosList implements OnInit {
 
   discos: disc[] = [
     {
@@ -54,6 +54,11 @@ export class DiscosList {
   ];
 
   constructor(public cart: DiscCart) {}
+
+  ngOnInit(): void {
+    this.cart.cargarCatalogo();
+    this.discos = this.cart.getDiscos();
+  }
 
   addToCart(disc: disc): void {
     this.cart.addToCart(disc);

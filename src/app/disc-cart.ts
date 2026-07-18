@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { disc } from './discos-list/disc';
 
 @Injectable({
@@ -9,13 +9,15 @@ import { disc } from './discos-list/disc';
 export class DiscCart {
   private urlDiscos = 'https://6a5a9908ad8332e75f02993a.mockapi.io/discos';
 
-  private discosSubject = new BehaviorSubject<disc[]>([]);
-  discos$ = this.discosSubject.asObservable();
+  // store plano: mismo array en memoria para todos los componentes (singleton)
+  private discos: disc[] = [];
 
   cartList: disc[] = [];
 
-  constructor(private http: HttpClient) {
-    this.cargarCatalogo();
+  constructor(private http: HttpClient) {}
+
+  getDiscos(): disc[] {
+    return this.discos;
   }
 
   obtenerDiscos(): Observable<disc[]> {
@@ -23,9 +25,13 @@ export class DiscCart {
   }
 
   cargarCatalogo(): void {
-    this.obtenerDiscos().subscribe((data) => {
-      this.discosSubject.next(data);
-    });
+    // solo pide a la API si todavía no hay datos cargados
+    if (this.discos.length === 0) {
+      this.obtenerDiscos().subscribe((data) => {
+        // push mantiene la misma referencia de array, no reasignar (this.discos = data)
+        this.discos.push(...data);
+      });
+    }
   }
 
   addToCart(disc: disc): void {
@@ -38,7 +44,6 @@ export class DiscCart {
       }
       disc.stock -= disc.quantity;
       disc.quantity = 0;
-      this.discosSubject.next(this.discosSubject.value);
     }
   }
 }
