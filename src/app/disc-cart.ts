@@ -30,7 +30,7 @@ export class DiscCart {
 
   addToCart(disc: disc): void {
     if (disc.quantity > 0) {
-      let item: disc | undefined = this.cartList.find((v1) => v1.name == disc.name);
+      let item: disc | undefined = this.cartList.find((v1) => v1.name == disc.name); //no me dejaba sin undefined poner item solo
       if (!item) {
         this.cartList.push({ ...disc });
       } else {
