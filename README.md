@@ -5,6 +5,7 @@ Trabajo Práctico Seminario Angular 2026.
 - **DNI:** 46344129
 - **Email:** ssimonmarconi@gmail.com
 - **Sede:** Tandil
+- **Carrera:** TUDAI
 
 ## Temática
 Tienda de discos de vinilo. Permite ver un catálogo de discos con su stock y precio, elegir cantidad y agregarlos a un carrito de compras.                       El catálogo se obtiene desde una API externa (MockAPI).
